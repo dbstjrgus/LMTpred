@@ -1,0 +1,5 @@
+if(EXISTS "/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/APIEXP_tests[1]_tests.cmake")
+  include("/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/APIEXP_tests[1]_tests.cmake")
+else()
+  add_test(APIEXP_tests_NOT_BUILT APIEXP_tests_NOT_BUILT)
+endif()
