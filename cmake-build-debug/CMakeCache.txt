@@ -489,6 +489,9 @@ PKG_CONFIG_EXECUTABLE:FILEPATH=PKG_CONFIG_EXECUTABLE-NOTFOUND
 //Value Computed by CMake
 cpr_BINARY_DIR:STATIC=/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-build
 
+//The directory containing a CMake configuration file for cpr.
+cpr_DIR:PATH=cpr_DIR-NOTFOUND
+
 //Value Computed by CMake
 cpr_IS_TOP_LEVEL:STATIC=OFF
 

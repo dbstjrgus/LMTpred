@@ -2,7 +2,6 @@
 #include <chrono>
 #include <thread>
 #include "apiaccess.h"
-#include "circularDeque.h"
 #include "MovingAvg.h"
 
 /**
@@ -10,34 +9,12 @@
  * The premises is built around that so lets not change it advocating for too much flexibilities
  * Thanks
  */
-
-int main() {
 #include <iostream>
 #include "circularDeque.h"
+int main() {
 
-
-        circularDeque<int> dq(5);
-
-        dq.insertBack(10);
-        dq.insertBack(20);
-        dq.insertFront(5);
-        dq.insertBack(30);
-        dq.print(); // Output: 5 10 20 30
-
-        dq.popFront();  // removes 5
-        dq.popBack();   // removes 30
-        dq.print();     // Output: 10 20
-
-        std::cout << "Front: " << dq.getFront() << '\n'; // 10
-        std::cout << "Back: " << dq.getBack() << '\n';   // 20
-
-        return 0;
-
-
-
-    /*
-    MemoryPool<data> pool(15); // memory efficiency
-    MovingAvg engine(6, pool);
+    //MemoryPool<data> pool(15); // memory efficiency
+    MovingAvg engine(6);
     json dat = getAPIData();
     const json& TSPMOIFTHISDONTWORK = dat["Time Series (5min)"];
     std::cout << "test 1" << std::endl;
@@ -79,6 +56,6 @@ int main() {
     //json SampleJSON = retrieveRaw(target);
 
     return 0;
-    */
+
 
 }

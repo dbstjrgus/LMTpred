@@ -114,7 +114,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "_deps/cpr-build/cpr/libcpr.1.10.4.dylib",
+				"fragment" : "_deps/cpr-build/cpr/libcpr.1.10.5.dylib",
 				"role" : "libraries"
 			},
 			{

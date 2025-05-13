@@ -16,7 +16,7 @@ set(CPR_FORCE_USE_SYSTEM_CURL ON)
 FetchContent_Declare(
         cpr
         GIT_REPOSITORY https://github.com/libcpr/cpr.git
-        GIT_TAG 1.10.4
+        GIT_TAG 1.10.5
 )
 
 # Fetch nlohmann JSON
@@ -49,6 +49,7 @@ target_link_libraries(APIEXP
         nlohmann_json::nlohmann_json
 )
 
+
 # Test executable (separate)
 add_executable(APIEXP_tests
         case_tester.cpp
@@ -60,6 +61,7 @@ target_link_libraries(APIEXP_tests
         cpr::cpr
         nlohmann_json::nlohmann_json
 )
+
 
 include(GoogleTest)
 gtest_discover_tests(APIEXP_tests)

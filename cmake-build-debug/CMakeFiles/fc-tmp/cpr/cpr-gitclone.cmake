@@ -52,13 +52,13 @@ endif()
 
 execute_process(
   COMMAND "/usr/bin/git"
-          checkout "1.10.4" --
+          checkout "1.10.5" --
   WORKING_DIRECTORY "/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-src"
   RESULT_VARIABLE error_code
   ${maybe_show_command}
 )
 if(error_code)
-  message(FATAL_ERROR "Failed to checkout tag: '1.10.4'")
+  message(FATAL_ERROR "Failed to checkout tag: '1.10.5'")
 endif()
 
 set(init_submodules TRUE)

@@ -85,9 +85,9 @@ build CMakeFiles/APIEXP.dir/MemoryPool.cpp.o: CXX_COMPILER__APIEXP_unscanned_Deb
 #############################################
 # Link the executable APIEXP
 
-build APIEXP: CXX_EXECUTABLE_LINKER__APIEXP_Debug CMakeFiles/APIEXP.dir/main.cpp.o CMakeFiles/APIEXP.dir/apiaccess.cpp.o CMakeFiles/APIEXP.dir/MovingAvg.cpp.o CMakeFiles/APIEXP.dir/MemoryPool.cpp.o | _deps/cpr-build/cpr/libcpr.1.10.4.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd || _deps/cpr-build/cpr/libcpr.dylib _deps/cpr-build/cpr/libcpr.dylib
+build APIEXP: CXX_EXECUTABLE_LINKER__APIEXP_Debug CMakeFiles/APIEXP.dir/main.cpp.o CMakeFiles/APIEXP.dir/apiaccess.cpp.o CMakeFiles/APIEXP.dir/MovingAvg.cpp.o CMakeFiles/APIEXP.dir/MemoryPool.cpp.o | _deps/cpr-build/cpr/libcpr.1.10.5.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd || _deps/cpr-build/cpr/libcpr.dylib _deps/cpr-build/cpr/libcpr.dylib
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
-  LINK_LIBRARIES = -Wl,-rpath,/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-build/cpr  _deps/cpr-build/cpr/libcpr.1.10.4.dylib  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd
+  LINK_LIBRARIES = -Wl,-rpath,/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-build/cpr  _deps/cpr-build/cpr/libcpr.1.10.5.dylib  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd
   OBJECT_DIR = CMakeFiles/APIEXP.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -118,9 +118,9 @@ build CMakeFiles/APIEXP_tests.dir/case_tester.cpp.o: CXX_COMPILER__APIEXP_tests_
 #############################################
 # Link the executable APIEXP_tests
 
-build APIEXP_tests APIEXP_tests[1]_tests.cmake | ${cmake_ninja_workdir}APIEXP_tests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__APIEXP_tests_Debug CMakeFiles/APIEXP_tests.dir/case_tester.cpp.o | lib/libgtest_main.1.12.1.dylib _deps/cpr-build/cpr/libcpr.1.10.4.dylib lib/libgtest.1.12.1.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd || _deps/cpr-build/cpr/libcpr.dylib lib/libgtest.dylib lib/libgtest_main.dylib lib/libgtest_main.dylib _deps/cpr-build/cpr/libcpr.dylib lib/libgtest.dylib
+build APIEXP_tests APIEXP_tests[1]_tests.cmake | ${cmake_ninja_workdir}APIEXP_tests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__APIEXP_tests_Debug CMakeFiles/APIEXP_tests.dir/case_tester.cpp.o | lib/libgtest_main.1.12.1.dylib _deps/cpr-build/cpr/libcpr.1.10.5.dylib lib/libgtest.1.12.1.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd || _deps/cpr-build/cpr/libcpr.dylib lib/libgtest.dylib lib/libgtest_main.dylib lib/libgtest_main.dylib _deps/cpr-build/cpr/libcpr.dylib lib/libgtest.dylib
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
-  LINK_LIBRARIES = -Wl,-rpath,/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/lib -Wl,-rpath,/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-build/cpr  lib/libgtest_main.1.12.1.dylib  _deps/cpr-build/cpr/libcpr.1.10.4.dylib  lib/libgtest.1.12.1.dylib  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd
+  LINK_LIBRARIES = -Wl,-rpath,/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/lib -Wl,-rpath,/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-build/cpr  lib/libgtest_main.1.12.1.dylib  _deps/cpr-build/cpr/libcpr.1.10.5.dylib  lib/libgtest.1.12.1.dylib  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd
   OBJECT_DIR = CMakeFiles/APIEXP_tests.dir
   POST_BUILD = cd /Users/25yoon/CLionProjects/APIEXP/cmake-build-debug && /Users/25yoon/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -D TEST_TARGET=APIEXP_tests -D TEST_EXECUTABLE=/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/APIEXP_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=APIEXP_tests_TESTS -D CTEST_FILE=/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/APIEXP_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /Users/25yoon/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/GoogleTestAddTests.cmake
   PRE_LINK = :
@@ -964,27 +964,27 @@ build _deps/cpr-build/cpr/CMakeFiles/cpr.dir/multiperform.cpp.o: CXX_COMPILER__c
 
 
 #############################################
-# Link the shared library _deps/cpr-build/cpr/libcpr.1.10.4.dylib
+# Link the shared library _deps/cpr-build/cpr/libcpr.1.10.5.dylib
 
-build _deps/cpr-build/cpr/libcpr.1.10.4.dylib: CXX_SHARED_LIBRARY_LINKER__cpr_Debug _deps/cpr-build/cpr/CMakeFiles/cpr.dir/accept_encoding.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/async.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/auth.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/bearer.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/callback.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/cert_info.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/cookies.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/cprtypes.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/curl_container.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/curlholder.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/error.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/file.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/multipart.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/parameters.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/payload.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/proxies.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/proxyauth.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/session.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/threadpool.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/timeout.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/unix_socket.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/util.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/response.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/redirect.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/interceptor.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/ssl_ctx.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/curlmultiholder.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/multiperform.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd
+build _deps/cpr-build/cpr/libcpr.1.10.5.dylib: CXX_SHARED_LIBRARY_LINKER__cpr_Debug _deps/cpr-build/cpr/CMakeFiles/cpr.dir/accept_encoding.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/async.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/auth.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/bearer.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/callback.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/cert_info.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/cookies.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/cprtypes.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/curl_container.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/curlholder.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/error.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/file.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/multipart.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/parameters.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/payload.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/proxies.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/proxyauth.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/session.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/threadpool.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/timeout.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/unix_socket.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/util.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/response.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/redirect.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/interceptor.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/ssl_ctx.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/curlmultiholder.cpp.o _deps/cpr-build/cpr/CMakeFiles/cpr.dir/multiperform.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd
   ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   INSTALLNAME_DIR = @rpath/
   LANGUAGE_COMPILE_FLAGS = -Wall -Wextra -Wpedantic -Werror -g
-  LINK_FLAGS = -compatibility_version 1.0.0 -current_version 1.10.4
+  LINK_FLAGS = -compatibility_version 1.0.0 -current_version 1.10.5
   LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd
   OBJECT_DIR = _deps/cpr-build/cpr/CMakeFiles/cpr.dir
   POST_BUILD = :
   PRE_LINK = :
   SONAME = libcpr.1.dylib
   SONAME_FLAG = -install_name
-  TARGET_FILE = _deps/cpr-build/cpr/libcpr.1.10.4.dylib
+  TARGET_FILE = _deps/cpr-build/cpr/libcpr.1.10.5.dylib
   TARGET_PDB = cpr.dylib.dbg
 
 
 #############################################
 # Create library symlink _deps/cpr-build/cpr/libcpr.dylib
 
-build _deps/cpr-build/cpr/libcpr.1.dylib _deps/cpr-build/cpr/libcpr.dylib: CMAKE_SYMLINK_LIBRARY _deps/cpr-build/cpr/libcpr.1.10.4.dylib
+build _deps/cpr-build/cpr/libcpr.1.dylib _deps/cpr-build/cpr/libcpr.dylib: CMAKE_SYMLINK_LIBRARY _deps/cpr-build/cpr/libcpr.1.10.5.dylib
   POST_BUILD = :
 
 

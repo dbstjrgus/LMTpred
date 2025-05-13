@@ -39,11 +39,11 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-build/cpr/libcpr.1.10.4.dylib"
+    "/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-build/cpr/libcpr.1.10.5.dylib"
     "/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-build/cpr/libcpr.1.dylib"
     )
   foreach(file
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcpr.1.10.4.dylib"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcpr.1.10.5.dylib"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcpr.1.dylib"
       )
     if(EXISTS "${file}" AND
