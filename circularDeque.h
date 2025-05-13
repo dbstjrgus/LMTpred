@@ -6,97 +6,96 @@
 #define CIRCULARDEQUE_H
 
 #include <iostream>
-#include "MemoryPool.cpp"
-template <typename T> class circularDeque {
+
+template <typename T>
+class circularDeque {
 private:
     T* array;
-    int  capacity, front;
-    MemoryPool<T>& pool;
+    int capacity;
+    int front;
+
+
 public:
-    int size;
-    circularDeque(int capacity, MemoryPool<T>& memoryPool);
+    circularDeque(int capacity);
     ~circularDeque();
-    [[nodiscard]] bool isEmpty() const;
+    int size;
+
+    bool isEmpty() const;
     void insertFront(T value);
     void insertBack(T value);
     void popFront();
     void popBack();
-    T getFront();
-    T getBack();
-    void print();
+    T getFront() const;
+    T getBack() const;
+    void print() const;
 };
 
-#define TEMP template <typename T>
-#define CLASS circularDeque<T>
+// Implementation
 
-
-
-TEMP
-CLASS::circularDeque(int capacity, MemoryPool<T>& pool) : size(0), front(0), capacity(capacity), pool(pool) {
-    array = pool.allocate(capacity);
-} // ok apperently this calls the constructor of T
-
-TEMP
-CLASS::~circularDeque() {
-    pool.deallocate(array, capacity); // Return memory to pool
+template <typename T>
+circularDeque<T>::circularDeque(int capacity)
+    : capacity(capacity), front(0), size(0)
+{
+    array = new T[capacity];
 }
 
-TEMP
-bool CLASS::isEmpty() const {return size == 0;}
+template <typename T>
+circularDeque<T>::~circularDeque() {
+    delete[] array;
+}
 
-TEMP
-void CLASS::insertFront(T value) {
-    if (size == capacity) {
-        return;
-    }
+template <typename T>
+bool circularDeque<T>::isEmpty() const {
+    return size == 0;
+}
+
+template <typename T>
+void circularDeque<T>::insertFront(T value) {
+    if (size == capacity) return;
     front = (front - 1 + capacity) % capacity;
     array[front] = value;
     size++;
 }
 
-TEMP
-void CLASS::insertBack(T value) {
-    if (size == capacity) {
-        return;
-    }
+template <typename T>
+void circularDeque<T>::insertBack(T value) {
+    if (size == capacity) return;
     int back = (front + size) % capacity;
     array[back] = value;
     size++;
 }
 
-TEMP
-void CLASS::popBack() {
-    if (size == 0) { throw std::runtime_error("deque is empty"); }
-    size--;
-    int back = (front + size -1 ) % capacity;
-    std::cout << array[back] << std::endl;
-}
-
-TEMP
-void CLASS::popFront() {
-    if (size == 0) { throw std::runtime_error("deque is empty"); }
-    T val = array[front];
+template <typename T>
+void circularDeque<T>::popFront() {
+    if (isEmpty()) throw std::runtime_error("Deque is empty");
     front = (front + 1) % capacity;
     size--;
-    std::cout << val << std::endl;
 }
 
-TEMP
-T CLASS::getBack() {
-    return array[(front+size-1) % capacity];
+template <typename T>
+void circularDeque<T>::popBack() {
+    if (isEmpty()) throw std::runtime_error("Deque is empty");
+    size--;
 }
 
-TEMP
-T CLASS::getFront() {
+template <typename T>
+T circularDeque<T>::getFront() const {
+    if (isEmpty()) throw std::runtime_error("Deque is empty");
     return array[front];
 }
 
-TEMP
-void CLASS::print() {
-    for (int i = 0; i < size; ++i) {
-        std::cout << array[(front + i) % capacity] << " ";
-    }
-    std::cout << std::endl;
+template <typename T>
+T circularDeque<T>::getBack() const {
+    if (isEmpty()) throw std::runtime_error("Deque is empty");
+    return array[(front + size - 1 + capacity) % capacity];
 }
 
-#endif //CIRCULARDEQUE_H
+template <typename T>
+void circularDeque<T>::print() const {
+    for (int i = 0; i < size; ++i) {
+        std::cout << array[(front + i) % capacity] << ' ';
+    }
+    std::cout << '\n';
+}
+
+#endif // CIRCULARDEQUE_H

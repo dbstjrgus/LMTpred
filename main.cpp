@@ -12,6 +12,30 @@
  */
 
 int main() {
+#include <iostream>
+#include "circularDeque.h"
+
+
+        circularDeque<int> dq(5);
+
+        dq.insertBack(10);
+        dq.insertBack(20);
+        dq.insertFront(5);
+        dq.insertBack(30);
+        dq.print(); // Output: 5 10 20 30
+
+        dq.popFront();  // removes 5
+        dq.popBack();   // removes 30
+        dq.print();     // Output: 10 20
+
+        std::cout << "Front: " << dq.getFront() << '\n'; // 10
+        std::cout << "Back: " << dq.getBack() << '\n';   // 20
+
+        return 0;
+
+
+
+    /*
     MemoryPool<data> pool(15); // memory efficiency
     MovingAvg engine(6, pool);
     json dat = getAPIData();
@@ -55,5 +79,6 @@ int main() {
     //json SampleJSON = retrieveRaw(target);
 
     return 0;
+    */
 
 }

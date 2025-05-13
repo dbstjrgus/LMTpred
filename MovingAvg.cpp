@@ -4,10 +4,15 @@
 #include "MovingAvg.h"
 
 
-MovingAvg::MovingAvg(int maxSize, MemoryPool<data>& memory_pool)
+#include "MovingAvg.h"
+#include <stdexcept>
+
+MovingAvg::MovingAvg(int maxSize)
     : maxSize(maxSize), open(0), close(0), high(0), low(0), volume(0) {
-    slide = new circularDeque<data>(maxSize, memory_pool);
+    slide = new circularDeque<data>(maxSize); // Normal dynamic allocation (no MemoryPool)
 }
+
+
 
 void MovingAvg::add(const data& d) {
     if (slide->size == maxSize) {
@@ -50,4 +55,5 @@ double MovingAvg::lowSMA() const {
     if (slide->size == 0) throw std::runtime_error("No data");
     return low / slide->size;
 }
+
 

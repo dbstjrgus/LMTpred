@@ -10,7 +10,7 @@
 class MovingAvg {
 public:
     int maxSize;
-    MovingAvg(int maxSize, MemoryPool<data>& memory_pool);
+    MovingAvg(int maxSize);
     void add(const data& data);
     double openSMA() const;
     double closeSMA() const;

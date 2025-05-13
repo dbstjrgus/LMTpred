@@ -18,9 +18,6 @@
 #include "data.h"
 #include <cstdlib>
 const std::string API_KEY_1 = std::getenv("API_KEY");
-
-
-
 const std::string target = "LMT"; // lockheed martin
 const std::string sections[5] = {"1. open", "2. high", "3. low", "4. close", "5. volume"};
 using json = nlohmann::json;
