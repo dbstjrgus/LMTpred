@@ -10,20 +10,29 @@
 #include <iostream>
 #include <cpr/cpr.h>
 #include <nlohmann/json.hpp>
+#include <ctime>
+#include <iomanip>
+#include <iostream>
+#include <sstream>
+#include <cmath>
+#include "data.h"
+#include <cstdlib>
+const std::string API_KEY_1 = std::getenv("API_KEY");
 
-const std::string API_KEY = "Y4TJWOM6JVOC58UJ"; // private api key
-const std::string API_KEY_2 = "30TBS18SOW2IE1ZQ";
+
+
 const std::string target = "LMT"; // lockheed martin
+const std::string sections[5] = {"1. open", "2. high", "3. low", "4. close", "5. volume"};
+using json = nlohmann::json;
 
-enum funcs {
-    TIME_SERIES_INTRADAY=1,
-    TIME_SERIES_DAILY,
-    TIME_SERIES_WEEKLY,
-    TIME_SERIES_MONTHLY
-};
 
 void printRawJson(const std::string& symbol);
-double retrievePrice(const std::string& time, const std::string& section);
+data retrievePrice(const std::string& time, const json& feed);
+std::string getTimeStamp();
+json returnJson(const std::string& symbol);
+json retrieveRaw(const std::string& symbol);
+json getAPIData();
+
 
 
 #endif //APIACCESS_H

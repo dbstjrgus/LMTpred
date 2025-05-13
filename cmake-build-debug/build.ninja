@@ -70,6 +70,13 @@ build CMakeFiles/APIEXP.dir/MovingAvg.cpp.o: CXX_COMPILER__APIEXP_unscanned_Debu
   OBJECT_DIR = CMakeFiles/APIEXP.dir
   OBJECT_FILE_DIR = CMakeFiles/APIEXP.dir
 
+build CMakeFiles/APIEXP.dir/MemoryPool.cpp.o: CXX_COMPILER__APIEXP_unscanned_Debug /Users/25yoon/CLionProjects/APIEXP/MemoryPool.cpp || cmake_object_order_depends_target_APIEXP
+  DEP_FILE = CMakeFiles/APIEXP.dir/MemoryPool.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-src/include -I/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-build/cpr_generated_includes -I/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/json-src/include
+  OBJECT_DIR = CMakeFiles/APIEXP.dir
+  OBJECT_FILE_DIR = CMakeFiles/APIEXP.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target APIEXP
@@ -78,7 +85,7 @@ build CMakeFiles/APIEXP.dir/MovingAvg.cpp.o: CXX_COMPILER__APIEXP_unscanned_Debu
 #############################################
 # Link the executable APIEXP
 
-build APIEXP: CXX_EXECUTABLE_LINKER__APIEXP_Debug CMakeFiles/APIEXP.dir/main.cpp.o CMakeFiles/APIEXP.dir/apiaccess.cpp.o CMakeFiles/APIEXP.dir/MovingAvg.cpp.o | _deps/cpr-build/cpr/libcpr.1.10.4.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd || _deps/cpr-build/cpr/libcpr.dylib _deps/cpr-build/cpr/libcpr.dylib
+build APIEXP: CXX_EXECUTABLE_LINKER__APIEXP_Debug CMakeFiles/APIEXP.dir/main.cpp.o CMakeFiles/APIEXP.dir/apiaccess.cpp.o CMakeFiles/APIEXP.dir/MovingAvg.cpp.o CMakeFiles/APIEXP.dir/MemoryPool.cpp.o | _deps/cpr-build/cpr/libcpr.1.10.4.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd || _deps/cpr-build/cpr/libcpr.dylib _deps/cpr-build/cpr/libcpr.dylib
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   LINK_LIBRARIES = -Wl,-rpath,/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-build/cpr  _deps/cpr-build/cpr/libcpr.1.10.4.dylib  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurl.tbd
   OBJECT_DIR = CMakeFiles/APIEXP.dir

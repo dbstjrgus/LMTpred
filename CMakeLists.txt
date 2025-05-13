@@ -40,6 +40,8 @@ add_executable(APIEXP
         circularDeque.h
         MovingAvg.cpp
         MovingAvg.h
+        data.h
+        MemoryPool.cpp
 )
 target_link_libraries(APIEXP
         PRIVATE

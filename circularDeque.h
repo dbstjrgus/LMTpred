@@ -6,14 +6,17 @@
 #define CIRCULARDEQUE_H
 
 #include <iostream>
+#include "MemoryPool.cpp"
 template <typename T> class circularDeque {
 private:
     T* array;
     int  capacity, front;
+    MemoryPool<T>& pool;
 public:
     int size;
-    circularDeque(int capacity);
-    bool isEmpty() const;
+    circularDeque(int capacity, MemoryPool<T>& memoryPool);
+    ~circularDeque();
+    [[nodiscard]] bool isEmpty() const;
     void insertFront(T value);
     void insertBack(T value);
     void popFront();
@@ -29,7 +32,14 @@ public:
 
 
 TEMP
-CLASS::circularDeque(int capacity) : size(0), front(0), array(new T[capacity]), capacity(capacity) {} // ok apperently this calls the constructor of T
+CLASS::circularDeque(int capacity, MemoryPool<T>& pool) : size(0), front(0), capacity(capacity), pool(pool) {
+    array = pool.allocate(capacity);
+} // ok apperently this calls the constructor of T
+
+TEMP
+CLASS::~circularDeque() {
+    pool.deallocate(array, capacity); // Return memory to pool
+}
 
 TEMP
 bool CLASS::isEmpty() const {return size == 0;}

@@ -3,6 +3,7 @@
 #include <thread>
 #include "apiaccess.h"
 #include "circularDeque.h"
+#include "MovingAvg.h"
 
 /**
  * The project uses alphavantage stock api, with time series of 5 minutes.
@@ -10,31 +11,49 @@
  * Thanks
  */
 
-
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 int main() {
-    std::string exampleTime = "2025-05-09 12:05:00";
-    std::string exampleSection = "3. low";
-
-    circularDeque<int> deque(6);
-    deque.insertBack(5);
-    deque.insertFront(4);
-
-    deque.print();
-
-
-/**
-    while (true) {
-        printRawJson(target);
-        retrievePrice(exampleTime, exampleSection);
-        return 0;
+    MemoryPool<data> pool(15); // memory efficiency
+    MovingAvg engine(6, pool);
+    json dat = getAPIData();
+    const json& TSPMOIFTHISDONTWORK = dat["Time Series (5min)"];
+    std::cout << "test 1" << std::endl;
+    std::vector<std::string> timestamps;
+    std::cout << "test 2" << std::endl;
+    for (auto it = TSPMOIFTHISDONTWORK.begin(); it != TSPMOIFTHISDONTWORK.end(); ++it) {
+        timestamps.push_back(it.key());
     }
-    */
+    //std::cout << timestamps[0] << std::endl;
+    std::cout << "test 3" << std::endl;
+    std::sort(timestamps.begin(), timestamps.end());
+    std::cout << "test 3.4" << std::endl;
+
+    if (!dat.contains("Time Series (5min)")) {
+        std::cerr << "Key 'Time Series (5min)' not found in JSON.\n";
+        return 1;
+    }
+
+    for (const std::string& time : timestamps) {
+        try {
+            std::cout << "test 4" << std::endl;
+            data d = retrievePrice(time, TSPMOIFTHISDONTWORK);
+            engine.add(d);
+
+            std::cout << time
+                      << " | OpenSMA: " << engine.openSMA()
+                      << " | HighSMA: " << engine.highSMA()
+                      << " | LowSMA: " << engine.lowSMA()
+                      << " | CloseSMA: " << engine.closeSMA()
+                      << " | VolumeSMA: " << engine.volumeSMA()
+                      << "\n";
+        } catch (const std::exception& e) {
+            std::cerr << "Skipping " << time << ": " << e.what() << std::endl;
+        }
+    }
+    std::cout << "test 4" << std::endl;
+
+    //data trough[engine.maxSize];
+    //json SampleJSON = retrieveRaw(target);
+
+    return 0;
 
 }
-
-// TIP See CLion help at <a
-// href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>.
-//  Also, you can try interactive lessons for CLion by selecting
-//  'Help | Learn IDE Features' from the main menu.

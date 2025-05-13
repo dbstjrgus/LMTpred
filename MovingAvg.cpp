@@ -3,36 +3,51 @@
 //
 #include "MovingAvg.h"
 
-MovingAvg::MovingAvg(int maxSize) {
-    this-> maxSize = maxSize;
-    this -> open = 0;
-    this -> close = 0;
-    this -> high = 0;
-    this -> low = 0;
-    this -> volume = 0;
-    this -> slide =  new circularDeque<data>(maxSize);
+
+MovingAvg::MovingAvg(int maxSize, MemoryPool<data>& memory_pool)
+    : maxSize(maxSize), open(0), close(0), high(0), low(0), volume(0) {
+    slide = new circularDeque<data>(maxSize, memory_pool);
 }
 
-void MovingAvg::add(const data& data) {
+void MovingAvg::add(const data& d) {
     if (slide->size == maxSize) {
-        const MovingAvg::data& out = slide->getFront();
-        open -= out.open;
-        close -= out.close;
-        high -= out.high;
+        const data& out = slide->getFront();
+        open   -= out.open;
+        close  -= out.close;
+        high   -= out.high;
         volume -= out.volume;
-        low -= out.low;
+        low    -= out.low;
     }
-    slide->insertBack(data);
-    open += data.open;
-    close += data.close;
-    high += data.high;
-    volume += data.volume;
-    low += data.low;
+    slide->insertBack(d);
+    open   += d.open;
+    close  += d.close;
+    high   += d.high;
+    volume += d.volume;
+    low    += d.low;
 }
 
-double MovingAvg::closeSMA() const {return close / slide->size; }
-double MovingAvg::openSMA() const {return open / slide->size; }
-double MovingAvg::volumeSMA() const {return volume / slide->size; }
-double MovingAvg::highSMA() const {return high / slide->size; }
-double MovingAvg::lowSMA() const {return low / slide->size; }
+double MovingAvg::closeSMA() const {
+    if (slide->size == 0) throw std::runtime_error("No data");
+    return close / slide->size;
+}
+
+double MovingAvg::openSMA() const {
+    if (slide->size == 0) throw std::runtime_error("No data");
+    return open / slide->size;
+}
+
+double MovingAvg::volumeSMA() const {
+    if (slide->size == 0) throw std::runtime_error("No data");
+    return volume / slide->size;
+}
+
+double MovingAvg::highSMA() const {
+    if (slide->size == 0) throw std::runtime_error("No data");
+    return high / slide->size;
+}
+
+double MovingAvg::lowSMA() const {
+    if (slide->size == 0) throw std::runtime_error("No data");
+    return low / slide->size;
+}
 

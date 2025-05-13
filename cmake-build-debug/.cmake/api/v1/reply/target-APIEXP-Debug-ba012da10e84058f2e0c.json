@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "APIEXP_tests"
+			"path" : "APIEXP"
 		}
 	],
 	"backtrace" : 1,
@@ -26,13 +26,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 51,
+				"line" : 36,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 54,
+				"line" : 46,
 				"parent" : 0
 			},
 			{
@@ -68,16 +68,6 @@
 				{
 					"backtrace" : 2,
 					"path" : "/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/json-src/include"
-				},
-				{
-					"backtrace" : 2,
-					"isSystem" : true,
-					"path" : "/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/googletest-src/googletest/include"
-				},
-				{
-					"backtrace" : 2,
-					"isSystem" : true,
-					"path" : "/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/googletest-src/googletest"
 				}
 			],
 			"language" : "CXX",
@@ -85,14 +75,16 @@
 			{
 				"backtraces" : 
 				[
-					2,
 					2
 				],
 				"standard" : "20"
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				4,
+				7
 			]
 		}
 	],
@@ -100,18 +92,10 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "gtest::@1ea2dfc0605fe3ab2a3f"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "cpr::@c4b08663df96993e8225"
 		}
 	],
-	"id" : "APIEXP_tests::@6890427a1f51a3e7e1df",
+	"id" : "APIEXP::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -125,22 +109,12 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/lib -Wl,-rpath,/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-build/cpr",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "lib/libgtest_main.1.12.1.dylib",
+				"fragment" : "-Wl,-rpath,/Users/25yoon/CLionProjects/APIEXP/cmake-build-debug/_deps/cpr-build/cpr",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
 				"fragment" : "_deps/cpr-build/cpr/libcpr.1.10.4.dylib",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "lib/libgtest.1.12.1.dylib",
 				"role" : "libraries"
 			},
 			{
@@ -151,8 +125,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "APIEXP_tests",
-	"nameOnDisk" : "APIEXP_tests",
+	"name" : "APIEXP",
+	"nameOnDisk" : "APIEXP",
 	"paths" : 
 	{
 		"build" : ".",
@@ -164,7 +138,20 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				4,
+				7
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				2,
+				3,
+				5,
+				6
 			]
 		}
 	],
@@ -173,7 +160,45 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "case_tester.cpp",
+			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "apiaccess.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "apiaccess.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "circularDeque.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "MovingAvg.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "MovingAvg.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "data.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "MemoryPool.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
